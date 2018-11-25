@@ -1,0 +1,91 @@
+diff --git "a/include/pbc_vc_compat.win32.h" "b/include/pbc_vc_compat.win32.h"
+index 27d3bba..7f772d4 100644
+--- "a/include/pbc_vc_compat.win32.h"
++++ "b/include/pbc_vc_compat.win32.h"
+@@ -3,7 +3,3 @@
+ #define __attribute__(X)
+ #define inline
+ #define __func__ __FUNCTION__
+-
+-#define NULL 0
+-
+-#define snprintf _snprintf
+\ No newline at end of file
+diff --git "a/pbcwin/projects/pbclib.vcxproj" "b/pbcwin/projects/pbclib.vcxproj"
+index f0a9b3f..507c24d 100644
+--- "a/pbcwin/projects/pbclib.vcxproj"
++++ "b/pbcwin/projects/pbclib.vcxproj"
+@@ -245,7 +245,8 @@
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
++      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -275,7 +275,8 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
++      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -305,7 +305,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -332,7 +332,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -361,7 +361,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -395,7 +395,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -429,7 +429,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+@@ -460,7 +460,7 @@ echo ***************************************************************************
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ForcedIncludeFiles>pbc_vc_compat.win32.h</ForcedIncludeFiles>
+       <DisableSpecificWarnings>4068</DisableSpecificWarnings>
+-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
++      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+     </ClCompile>
+     <Link>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
