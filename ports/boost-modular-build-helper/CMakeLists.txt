@@ -30,7 +30,7 @@ endif()
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     list(APPEND B2_OPTIONS address-model=64)
-else()
+elseif(NOT VCPKG_TARGET_ARCHITECTURE STREQUAL "arm")
     list(APPEND B2_OPTIONS address-model=32)
 endif()
 
@@ -154,7 +154,7 @@ add_custom_target(boost ALL
         --hash
         -q
 
-        architecture=x86
+        architecture=${VCPKG_TARGET_ARCHITECTURE}
         threading=multi
         threadapi=pthread
         debug-symbols=on
